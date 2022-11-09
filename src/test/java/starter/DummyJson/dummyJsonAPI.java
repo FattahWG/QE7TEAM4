@@ -18,6 +18,7 @@ public class dummyJsonAPI {
     public static String POST_NEW_COMMENTS = URL +"comments/add";
     public static String DELETE_COMMENTS = URL +"comments/{id}";
     public static String HTTP_MOCKUP = URL + "http/{status}";
+    public static String HTTP_CUSTOM = URL + "http/404/{message}";
 
 
     //GET METHOD
@@ -52,5 +53,10 @@ public class dummyJsonAPI {
 
     @Step("Mockup HTPP")
     public void MockupHttp(String status){ SerenityRest.given().pathParam("status", status);
+    }
+
+    @Step("Mockup custom")
+    public void MockupCustom(String http){
+        SerenityRest.given().pathParam("message", http);
     }
 }

@@ -15,7 +15,8 @@ public class dummyJsonHttpmockup {
     dummyJsonAPI DummyJsonAPI;
 
     @Given("Get http mockup {string}")
-    public void getHttpMockup(String status) {DummyJsonAPI.MockupHttp(status);
+    public void getHttpMockup(String status) {
+        DummyJsonAPI.MockupHttp(status);
     }
 
     @When("Send get http request")
@@ -30,14 +31,31 @@ public class dummyJsonHttpmockup {
     }
 
     @And("Respon body should be status {string} and message {string}")
-    public void responBodyShouldBeStatusStatusAndMessageMessage(String status, String message) {
+    public void responBodyShouldBeStatusAndMessage(String status, String message) {
         SerenityRest.then().body(dummyJsonResponses.STATUS, equalTo(status))
                 .body(dummyJsonResponses.MESSAGE, equalTo(message));
     }
 
-    @And("Validate http mocukup with valid json")
+    @And("Validate http mockup with valid json")
     public void validateHttpMocukupWithValidJson() {
         File json = new File(dummyJsonAPI.JSON_REG_BODY + "/GethttpmockupSchema.json");
+        DummyJsonAPI.ValidateJson(json);
+    }
+
+    //Custom Mockup http
+    @Given("Post http mockup custom {string}")
+    public void postHttpMockupCustom(String http) {
+        DummyJsonAPI.MockupCustom(http);
+    }
+
+    @When("Send post http mockup custom")
+    public void sendPostHttpMockupCustom() {
+        SerenityRest.when().post(dummyJsonAPI.HTTP_CUSTOM);
+    }
+
+    @And("Validate http mockup custom with valid json")
+    public void validateHttpMockupCustom() {
+        File json = new File(dummyJsonAPI.JSON_REG_BODY + "/PostHttpmockupCustomSchema.json");
         DummyJsonAPI.ValidateJson(json);
     }
 }

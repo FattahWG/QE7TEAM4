@@ -8,7 +8,6 @@ Feature: comments dummyjson
     And  Respon body should be total comment 340 and limit view 30
     And Validate get list comments with valid json
 
-
   @comments
   Scenario Outline: Get comments id
     Given Get comments id <id>
@@ -76,8 +75,4 @@ Feature: comments dummyjson
       | id | userId |
       | 1  | 63     |
       | 2  | 71     |
-      | 3  |29      |
-
-
-
-
+      | 3  | 29     |
