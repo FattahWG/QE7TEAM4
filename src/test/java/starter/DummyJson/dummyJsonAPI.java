@@ -7,18 +7,18 @@ import net.thucydides.core.annotations.Step;
 
 import java.io.File;
 public class dummyJsonAPI {
-    public static final String URL = "https://dummyjson.com";
+    public static final String URL = "https://dummyjson.com/";
     public static final String DIR = System.getProperty("user.dir");
     public static final String JSON_REG_BODY = DIR + "/src/test/resources/JSON/Requestbody";
     public static final String JSON_SCHEMA = DIR+"/src/test/resources/JSON/JsonSchema";
 
-    public static String GET_COMMENTS = URL + "/comments";
-    public static String GET_COMMENTS_ID = URL + "/comments/{id}";
-    public static String GET_COMMENTS_POSTID = URL + "/comments/post/{id}";
-    public static String POST_NEW_COMMENTS = URL +"/comments/add";
-    public static String DELETE_COMMENTS = URL +"/comments/{id}";
-    public static String HTTP_MOCKUP = URL + "/http/{status}";
-    public static String HTTP_CUSTOM = URL + "/http/404/{message}";
+    public static String GET_COMMENTS = URL + "comments";
+    public static String GET_COMMENTS_ID = URL + "comments/{id}";
+    public static String GET_COMMENTS_POSTID = URL + "comments/post/{id}";
+    public static String POST_NEW_COMMENTS = URL +"comments/add";
+    public static String DELETE_COMMENTS = URL +"comments/{id}";
+    public static String HTTP_MOCKUP = URL + "http/{status}";
+    public static String HTTP_CUSTOM = URL + "http/404/{message}";
 
 
     //GET METHOD
