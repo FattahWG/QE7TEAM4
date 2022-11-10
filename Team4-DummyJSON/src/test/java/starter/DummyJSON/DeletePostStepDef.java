@@ -18,21 +18,21 @@ import java.io.File;
 
 public class DeletePostStepDef {
     @Steps
-    DummyJsonAPI dummyJsonAPI;
+    dummyJsonAPI DummyJsonAPI;
 
     @Given("Delete post with valid id {int}")
     public void deletePostWithValidIdId(int id) {
-        dummyJsonAPI.setDeletePost(id);
+        DummyJsonAPI.setDeletePost(id);
     }
 
     @When("Send delete post request")
     public void sendDeletePostRequest() {
-        SerenityRest.when().delete(DummyJsonAPI.DELETE_POST);
+        SerenityRest.when().delete(dummyJsonAPI.DELETE_POST);
     }
 
     @And("Validate delete post json schema")
     public void validateDeletePostJsonSchema() {
-        File json = new File(DummyJsonAPI.JSON_SCHEMA + "/DeletePostJsonSchema.json");
+        File json = new File(dummyJsonAPI.JSON_SCHEMA + "/DeletePostJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 }

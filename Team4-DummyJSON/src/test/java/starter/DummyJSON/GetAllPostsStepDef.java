@@ -16,16 +16,16 @@ import java.io.File;
 
 public class GetAllPostsStepDef {
     @Steps
-    DummyJsonAPI dummyJsonAPI;
+    dummyJsonAPI DummyJsonAPI;
 
     @Given("Get all posts")
     public void getAllPosts() {
-        dummyJsonAPI.setGetAllPost();
+        DummyJsonAPI.setGetAllPost();
     }
 
     @When("Send get all posts request")
     public void sendGetAllPosts() {
-        SerenityRest.when().get(DummyJsonAPI.GET_ALL_POST);
+        SerenityRest.when().get(dummyJsonAPI.GET_ALL_POST);
     }
 
     @Then("Status code should response {int} OK")
@@ -35,7 +35,7 @@ public class GetAllPostsStepDef {
 
     @And("Validate get all post json schema")
     public void validateGetAllPostJsonSchema() {
-        File json = new File(DummyJsonAPI.JSON_SCHEMA + "/GetAllPostJsonSchema.json");
+        File json = new File(dummyJsonAPI.JSON_SCHEMA + "/GetAllPostJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 }

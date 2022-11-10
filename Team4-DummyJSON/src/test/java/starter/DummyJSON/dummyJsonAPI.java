@@ -6,7 +6,7 @@ import net.thucydides.core.annotations.Step;
 
 import java.io.File;
 
-public class DummyJsonAPI {
+public class dummyJsonAPI {
     public static final String URL = "https://dummyjson.com";
     public static final String DIR = System.getProperty("user.dir");
     public static final String JSON_REQUEST_BODY = DIR + "/src/test/resources/JSON/RequestBody";

@@ -16,26 +16,26 @@ import java.io.File;
 
 public class GetUserIDStepDef {
     @Steps
-    DummyJsonAPI dummyJsonAPI;
+    dummyJsonAPI DummyJsonAPI;
 
     @Given("Get post by user id wit valid parameter userid {int}")
     public void getPostByUserIdWitValidParameterUseridUserid(int userid) {
-        dummyJsonAPI.setGetPostByUserId(userid);
+        DummyJsonAPI.setGetPostByUserId(userid);
     }
 
     @When("Send get post by user request")
     public void sendGetPostByUserRequest() {
-        SerenityRest.when().get(DummyJsonAPI.GET_POST_BY_USER_ID);
+        SerenityRest.when().get(dummyJsonAPI.GET_POST_BY_USER_ID);
     }
 
     @And("Validate get post by user id json schema")
     public void validateGetPostByUserIdJsonSchema() {
-        File json = new File(DummyJsonAPI.JSON_SCHEMA + "/GetUserIDJsonSchema.json");
+        File json = new File(dummyJsonAPI.JSON_SCHEMA + "/GetUserIDJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 
     @Given("Get post by user id with invalid parameter userid {int}")
     public void getPostByUserIdWithInvalidParameterUseridUserid(int userid) {
-        dummyJsonAPI.setGetPostByUserId(userid);
+        DummyJsonAPI.setGetPostByUserId(userid);
     }
 }

@@ -16,21 +16,21 @@ import java.io.File;
 
 public class GetSearchPostBodyStepDef {
     @Steps
-    DummyJsonAPI dummyJsonAPI;
+    dummyJsonAPI DummyJsonAPI;
 
     @Given("Get search post body with valid parameter word {string}")
     public void getSearchPostBodyWithValidParameterWordWord(String word) {
-        dummyJsonAPI.setGetSearchPostBody(word);
+        DummyJsonAPI.setGetSearchPostBody(word);
     }
 
     @When("Send get search post body request")
     public void sendGetSearchPostBodyRequest() {
-        SerenityRest.when().get(DummyJsonAPI.GET_SEARCH_POST_BODY);
+        SerenityRest.when().get(dummyJsonAPI.GET_SEARCH_POST_BODY);
     }
 
     @And("Validate get search post body json schema")
     public void validateGetSearchPostBodyJsonSchema() {
-        File json = new File(DummyJsonAPI.JSON_SCHEMA + "/GetSearchPostBodyJsonSchema.json");
+        File json = new File(dummyJsonAPI.JSON_SCHEMA + "/GetSearchPostBodyJsonSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 }
