@@ -64,6 +64,18 @@ public class dummyJsonAPI {
     public static String PUT_UPDATE_A_PRODUCT = URL + "/products/{id}";
     public static String DELETE_A_PRODUCT = URL + "/products/{id}";
 
+    public static String GET_LIST_USER = URL + "/users";
+    public static String GET_INVALID_USER = URL + "userrrsst";
+    public static String GET_SINGLE_USER =URL + "/users/{id}";
+    public static String GET_SEARCH_USER = URL + "/users/search?q={page}";
+    public static String GET_FILTER_USER = URL + "/users/filter?key={key}&value={value}";
+    public static String GET_USER_CARTS = URL + "/users/{id}/carts";
+    public static String GET_USER_POSTS = URL +"/users/{id}/posts";
+    public static String GET_USER_TODOS = URL +"/users/{id}/todos";
+    public static String POST_ADD_NEW_USER = URL + "/users/add";
+    public static String PUT_UPDATE_USER = URL + "/users/{id}";
+    public static String DELETE_USER = URL + "/users/{id}";
+
     @Step("Get All Post")
     public void setGetAllPost(){
         SerenityRest.given();
@@ -196,6 +208,81 @@ public class dummyJsonAPI {
         SerenityRest.given().pathParam("message", http);
     }
 
+    @Step ("Get List User")
+    public void GetListUser(){
+    }
+//    @Step ("Get List User invalid")
+//    public void GetListUserInvalid(){
+//
+//    }
+    @Step ("Get Single User Valid Id")
+    public void GetSingleUserValidId(int id){
+        SerenityRest.given().pathParams("id", id);
+    }
+    @Step ("Get Single User invalid page")
+    public void GetSingleUserInalidPage(String page){
+        SerenityRest.given().pathParams("id", page);
+    }
+    @Step ("Get Single User invalid Id")
+    public void GetSingleUserInalidId(int id){
+        SerenityRest.given().pathParams("id", id);
+    }
+    @Step ("Get search user with valid Page")
+    public void GetSearchUserValidPage(String page){
+        SerenityRest.given().pathParams("page", page);
+    }
+    @Step ("Get search user with invalid Page")
+    public void GetSearchUserInvalidPage (String page){
+        SerenityRest.given().pathParams("page", page);
+    }
+    @Step ("Get filter user with valid path")
+    public void GetFilterWithValidPath(String key, String value){
+        SerenityRest.given().pathParams("key", key)
+                .pathParams("value", value);
+    }
+    @Step("Get user carts by id")
+    public void GetUserCartsById (int id){
+        SerenityRest.given().pathParams("id", id);
+    }
+    @Step("Get user carts with invalid by id")
+    public void GetUserCartsWithInvalidById (String id){
+        SerenityRest.given().pathParams("id", id);
+    }
+
+    @Step("Get user posts by id")
+    public void GetUserPostsById (int id){
+        SerenityRest.given().pathParams("id", id);
+    }
+    @Step("Get user posts with invalid by id")
+    public void GetUserPostsWithInvalidById (String id){
+        SerenityRest.given().pathParams("id", id);
+    }
+    @Step("Get user todos by id")
+    public void GetUserTodosById (int id){
+        SerenityRest.given().pathParams("id", id);
+    }
+    @Step("Get user todos with invalid by id")
+    public void GetUserTodosWithInvalidById (String id){
+        SerenityRest.given().pathParams("id", id);
+    }
+    @Step ("Post add a new user")
+    public void PostAddNewUser(File json){
+        SerenityRest.given()
+                .contentType(ContentType.JSON).body(json);
+    }
+    @Step("Put update user")
+    public void PutUpdateUser(int id,File json){
+        SerenityRest.given().pathParam("id", id)
+                .contentType(ContentType.JSON).body(json);
+    }
+
+
+    @Step("Delete User")
+    public void deleteUser (int id){
+        SerenityRest.given()
+                .pathParam("id", id);
+    }
+
     @Step("Get quotes id")
     public void GetQuotesId(int id){
         SerenityRest.given().pathParam("id", id);
@@ -243,4 +330,5 @@ public class dummyJsonAPI {
     public void setDeleteAProduct(int id){
         SerenityRest.given().pathParam("id", id);
     }
+
 }

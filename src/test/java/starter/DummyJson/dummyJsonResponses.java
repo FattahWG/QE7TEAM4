@@ -2,6 +2,12 @@ package starter.DummyJson;
 
 public class dummyJsonResponses {
 
+    public static final String FIRSTNAME = "firstname";
+    public static final String LASTNAME = "lastName";
+    public static final String AGE = "age";
+
+
+
     public static final String PRODUCTS = "products";
     public static final String QUANTITY = "quantity";
     public static final String TITLE = "title";
