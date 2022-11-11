@@ -26,6 +26,82 @@ public class dummyJsonAPI {
     public static String GET_SINGLE_TODOS = URL + "/todos/{id}";
     public static String POST_NEW_TODO = URL + "/todos/add";
 
+    //Scenario GET
+    public static String GET_ALL_POST = URL + "/posts";
+    public static String GET_SINGLE_POST = URL + "/posts/{id}";
+    public static String GET_POST_ID = URL + "/posts/{postid}/comments";
+    public static String GET_POST_BY_USER_ID = URL + "/posts/user/{userid}";
+    public static String GET_SEARCH_POST_BODY = URL + "/posts/search?q={word}";
+
+    //Scenario POST
+    public static String POST_CREATE_POST = URL + "/posts/add";
+
+    //Scenario PUT
+    public static String PUT_UPDATE_POST = URL + "/posts/{id}";
+
+    //Scenario DELETE
+    public static String DELETE_POST = URL + "/posts/{id}";
+
+
+    public static String GET_ALL_PRODUCTS = URL + "/products";
+    public static String GET_SINGLE_PRODUCTS = URL + "/products/{id}";
+    public static String GET_ALL_PRODUCTS_CATEGORIES = URL + "/products/categories";
+    public static String POST_A_PRODUCT = URL + "/products/add";
+    public static String PUT_UPDATE_A_PRODUCT = URL + "/products/{id}";
+    public static String DELETE_A_PRODUCT = URL + "/products/{id}";
+
+    @Step("Get All Post")
+    public void setGetAllPost(){
+        SerenityRest.given();
+    }
+
+    //Scenario Single Post
+    @Step("Get Single Post")
+    public void setGetSinglePost(int id){
+        SerenityRest.given()
+                .pathParam("id", id);
+    }
+
+    //Scenario Get Post ID
+    @Step("Get Post ID")
+    public void setGetPostId(int postId){
+        SerenityRest.given().pathParam("postid", postId);
+    }
+
+    //Scenario Get Post By User ID
+    @Step("Get Post By User ID")
+    public void setGetPostByUserId(int userId){
+        SerenityRest.given().pathParam("userid", userId);
+    }
+
+    //Scenario Get Search Post Body
+    @Step("Get Search Post Body")
+    public void setGetSearchPostBody(String word){
+        SerenityRest.given().pathParam("word",word);
+    }
+
+    //Scenario Post Create Post
+    @Step("Post Create Post")
+    public void setPostCreatePost(File json){
+        SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
+
+    //Scenario Put Update Post
+    @Step("Put Update Post")
+    public void setPutUpdatePost(int id, File json){
+        SerenityRest.given()
+                .pathParam("id", id)
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
+
+    //Scenario Delete Post
+    @Step("Delete Post")
+    public void setDeletePost(int id){
+        SerenityRest.given().pathParam("id", id);
+    }
 
     //GET METHOD
     @Step("Get list comments")
@@ -76,6 +152,41 @@ public class dummyJsonAPI {
     }
     @Step("Get todos user id")
     public void GetTodosUserId(int id){
+        SerenityRest.given().pathParam("id", id);
+    }
+
+    @Step("Get All Products")
+    public void setGetAllProducts(){
+        SerenityRest.given();
+    }
+
+    @Step("Get Single Products")
+    public void setGetSingleProducts(int id){
+        SerenityRest.given().pathParam("id", id);
+    }
+
+    @Step("Get All Products Categories")
+    public void setGetAllProductsCategories(){
+        SerenityRest.given();
+    }
+
+    @Step("Post Create Products")
+    public void setPostAProduct(File json){
+        SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
+
+    @Step("Put Update Product")
+    public void setPutUpdateAProduct(int id, File json){
+        SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(json)
+                .pathParam("id", id);
+    }
+
+    @Step("Delete Product")
+    public void setDeleteAProduct(int id){
         SerenityRest.given().pathParam("id", id);
     }
 }

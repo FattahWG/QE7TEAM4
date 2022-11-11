@@ -17,8 +17,3 @@ Feature: todos dummyjson
       | 1 |
       | 2 |
 
-  @todos
-  Scenario: Get all todos by user id
-    Given Get all todos by user <id>
-    When Send get all todos request
-    Then Status code should be 200 OK

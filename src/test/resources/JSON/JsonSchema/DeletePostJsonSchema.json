@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "integer"
+    },
+    "tags": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "reactions": {
+      "type": "integer"
+    },
+    "isDeleted": {
+      "type": "boolean"
+    },
+    "deletedOn": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "body",
+    "userId",
+    "tags",
+    "reactions",
+    "isDeleted",
+    "deletedOn"
+  ]
+}
