@@ -1,0 +1,98 @@
+
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "todos": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "todo": {
+              "type": "string"
+            },
+            "completed": {
+              "type": "boolean"
+            },
+            "userId": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "todo",
+            "completed",
+            "userId"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "todo": {
+              "type": "string"
+            },
+            "completed": {
+              "type": "boolean"
+            },
+            "userId": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "todo",
+            "completed",
+            "userId"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "todo": {
+              "type": "string"
+            },
+            "completed": {
+              "type": "boolean"
+            },
+            "userId": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "todo",
+            "completed",
+            "userId"
+          ]
+        }
+      ]
+    },
+    "total": {
+      "type": "integer"
+    },
+    "skip": {
+      "type": "integer"
+    },
+    "limit": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "todos",
+    "total",
+    "skip",
+    "limit"
+  ]
+}
+

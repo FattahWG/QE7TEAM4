@@ -1,0 +1,241 @@
+
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "carts": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "products": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "quantity": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "discountPercentage": {
+                      "type": "number"
+                    },
+                    "discountedPrice": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "price",
+                    "quantity",
+                    "total",
+                    "discountPercentage",
+                    "discountedPrice"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "quantity": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "discountPercentage": {
+                      "type": "number"
+                    },
+                    "discountedPrice": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "price",
+                    "quantity",
+                    "total",
+                    "discountPercentage",
+                    "discountedPrice"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "quantity": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "discountPercentage": {
+                      "type": "number"
+                    },
+                    "discountedPrice": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "price",
+                    "quantity",
+                    "total",
+                    "discountPercentage",
+                    "discountedPrice"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "quantity": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "discountPercentage": {
+                      "type": "integer"
+                    },
+                    "discountedPrice": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "price",
+                    "quantity",
+                    "total",
+                    "discountPercentage",
+                    "discountedPrice"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "quantity": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "discountPercentage": {
+                      "type": "number"
+                    },
+                    "discountedPrice": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "price",
+                    "quantity",
+                    "total",
+                    "discountPercentage",
+                    "discountedPrice"
+                  ]
+                }
+              ]
+            },
+            "total": {
+              "type": "integer"
+            },
+            "discountedTotal": {
+              "type": "integer"
+            },
+            "userId": {
+              "type": "integer"
+            },
+            "totalProducts": {
+              "type": "integer"
+            },
+            "totalQuantity": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "products",
+            "total",
+            "discountedTotal",
+            "userId",
+            "totalProducts",
+            "totalQuantity"
+          ]
+        }
+      ]
+    },
+    "total": {
+      "type": "integer"
+    },
+    "skip": {
+      "type": "integer"
+    },
+    "limit": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "carts",
+    "total",
+    "skip",
+    "limit"
+  ]
+}
+
