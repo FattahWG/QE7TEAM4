@@ -1,6 +1,11 @@
 package starter.DummyJson;
 
 public class dummyJsonResponses {
+
+    public static final String PRODUCTS = "products";
+    public static final String QUANTITY = "quantity";
+    public static final String TITLE = "title";
+    public static final String USERID = "userId";
     public static final String ID = "id";
     public static final String POSTID = "postId";
     public static final String POST_ID = "comments.postId";

@@ -19,7 +19,143 @@ public class dummyJsonAPI {
     public static String DELETE_COMMENTS = URL +"/comments/{id}";
     public static String HTTP_MOCKUP = URL + "/http/{status}";
     public static String HTTP_CUSTOM = URL + "/http/404/{message}";
+    public static String GET_ALL_QUOTES = URL + "/quotes";
+    public static String GET_SINGLE_QUOTES = URL + "/quotes/{id}";
+    public static String GET_RANDOM_QUOTES = URL + "/quotes/random";
+    public static String GET_ALL_TODOS = URL + "/todos";
+    public static String GET_SINGLE_TODOS = URL + "/todos/{id}";
+    public static String POST_NEW_TODO = URL + "/todos/add";
 
+    //Scenario GET
+    public static String GET_ALL_POST = URL + "/posts";
+    public static String GET_SINGLE_POST = URL + "/posts/{id}";
+    public static String GET_POST_ID = URL + "/posts/{postid}/comments";
+    public static String GET_POST_BY_USER_ID = URL + "/posts/user/{userid}";
+    public static String GET_SEARCH_POST_BODY = URL + "/posts/search?q={word}";
+
+    //Scenario POST
+    public static String POST_CREATE_POST = URL + "/posts/add";
+
+    //Scenario PUT
+    public static String PUT_UPDATE_POST = URL + "/posts/{id}";
+
+    //Scenario DELETE
+    public static String DELETE_POST = URL + "/posts/{id}";
+
+    public static String GET_ALL_CARTS = URL + "/carts";
+    public static String GET_SINGLE_CARTS = URL + "/carts/{id}";
+    public static String GET_CART_USER_BY_USER_ID = URL + "/carts/user/{userId}";
+
+    //Scenario POST
+    public static String POST_CREATE_CART = URL + "/carts/add";
+
+    //Scenario PUT
+    public static String PUT_UPDATE_CART = URL + "/carts/{id}";
+
+    //Scenario DELETE
+    public static String DELETE_CART = URL + "/carts/{id}";
+
+
+
+    public static String GET_ALL_PRODUCTS = URL + "/products";
+    public static String GET_SINGLE_PRODUCTS = URL + "/products/{id}";
+    public static String GET_ALL_PRODUCTS_CATEGORIES = URL + "/products/categories";
+    public static String POST_A_PRODUCT = URL + "/products/add";
+    public static String PUT_UPDATE_A_PRODUCT = URL + "/products/{id}";
+    public static String DELETE_A_PRODUCT = URL + "/products/{id}";
+
+    @Step("Get All Post")
+    public void setGetAllPost(){
+        SerenityRest.given();
+    }
+
+    //Scenario Single Post
+    @Step("Get Single Post")
+    public void setGetSinglePost(int id){
+        SerenityRest.given()
+                .pathParam("id", id);
+    }
+
+    //Scenario Get Post ID
+    @Step("Get Post ID")
+    public void setGetPostId(int postId){
+        SerenityRest.given().pathParam("postid", postId);
+    }
+
+    //Scenario Get Post By User ID
+    @Step("Get Post By User ID")
+    public void setGetPostByUserId(int userId){
+        SerenityRest.given().pathParam("userid", userId);
+    }
+
+    //Scenario Get Search Post Body
+    @Step("Get Search Post Body")
+    public void setGetSearchPostBody(String word){
+        SerenityRest.given().pathParam("word",word);
+    }
+
+    //Scenario Post Create Post
+    @Step("Post Create Post")
+    public void setPostCreatePost(File json){
+        SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
+
+    //Scenario Put Update Post
+    @Step("Put Update Post")
+    public void setPutUpdatePost(int id, File json){
+        SerenityRest.given()
+                .pathParam("id", id)
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
+
+    //Scenario Delete Post
+    @Step("Delete Post")
+    public void setDeletePost(int id){
+        SerenityRest.given().pathParam("id", id);
+    }
+
+    @Step("Get All Carts")
+    public void setGetAllCarts(){
+        SerenityRest.given();
+    }
+
+    //Scenario Get Single Cart
+    @Step("Get Single Cart")
+    public void setGetSingleCarts(int id){
+        SerenityRest.given().pathParam("id", id);
+    }
+
+    //Scenario Cart User By User ID
+    @Step("Get Cart User By User ID")
+    public void setGetCartUserByUserId(int userId){
+        SerenityRest.given().pathParam("userId", userId);
+    }
+
+    //Scenario Post Create Cart
+    @Step("Post Create Cart")
+    public void setPostCreateCart(File json){
+        SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
+
+    //Scenario Put Update Cart
+    @Step("Put Update Cart")
+    public void setPutUpdateCart(int id, File json){
+        SerenityRest.given()
+                .pathParam("id", id)
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
+
+    //Scenario Delete Cart
+    @Step("Delete Cart")
+    public void setDeleteCart(int id){
+        SerenityRest.given().pathParam("id", id);
+    }
 
     //GET METHOD
     @Step("Get list comments")
@@ -58,5 +194,53 @@ public class dummyJsonAPI {
     @Step("Mockup custom")
     public void MockupCustom(String http){
         SerenityRest.given().pathParam("message", http);
+    }
+
+    @Step("Get quotes id")
+    public void GetQuotesId(int id){
+        SerenityRest.given().pathParam("id", id);
+    }
+    @Step("Get todos id")
+    public void GetTodosId(int id){
+        SerenityRest.given().pathParam("id", id);
+    }
+    @Step("Get todos user id")
+    public void GetTodosUserId(int id){
+        SerenityRest.given().pathParam("id", id);
+    }
+
+    @Step("Get All Products")
+    public void setGetAllProducts(){
+        SerenityRest.given();
+    }
+
+    @Step("Get Single Products")
+    public void setGetSingleProducts(int id){
+        SerenityRest.given().pathParam("id", id);
+    }
+
+    @Step("Get All Products Categories")
+    public void setGetAllProductsCategories(){
+        SerenityRest.given();
+    }
+
+    @Step("Post Create Products")
+    public void setPostAProduct(File json){
+        SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
+
+    @Step("Put Update Product")
+    public void setPutUpdateAProduct(int id, File json){
+        SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(json)
+                .pathParam("id", id);
+    }
+
+    @Step("Delete Product")
+    public void setDeleteAProduct(int id){
+        SerenityRest.given().pathParam("id", id);
     }
 }
