@@ -1,4 +1,4 @@
-package starter.Carts;
+package starter.DummyJson;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -21,7 +21,7 @@ public class PostCreateCartStepDef {
 
     @Given("Post create cart with valid json")
     public void postCreateCartWithValidJson() {
-        File json = new File(dummyJsonAPI.JSON_REQUEST_BODY + "/PostCreateCart.json");
+        File json = new File(dummyJsonAPI.JSON_REG_BODY + "/PostCreateCart.json");
         DummyJsonAPI.setPostCreateCart(json);
     }
 

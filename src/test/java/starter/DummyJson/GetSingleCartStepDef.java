@@ -1,4 +1,4 @@
-package starter.Carts;
+package starter.DummyJson;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -44,11 +44,5 @@ public class GetSingleCartStepDef {
     public void getSingleCartWithInvalidIdId(int id) {
         DummyJsonAPI.setGetSingleCarts(id);
     }
-
-    @Then("Status code should response {int} Not Found")
-    public void statusCodeShouldResponseNotFound(int NotFound) {
-        SerenityRest.then().statusCode(NotFound);
-    }
-
 
 }

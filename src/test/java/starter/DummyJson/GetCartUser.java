@@ -1,4 +1,4 @@
-package starter.Carts;
+package starter.DummyJson;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

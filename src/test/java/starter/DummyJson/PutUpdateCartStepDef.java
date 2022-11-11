@@ -1,4 +1,4 @@
-package starter.Carts;
+package starter.DummyJson;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -20,7 +20,7 @@ public class PutUpdateCartStepDef {
 
     @Given("Put update cart with valid json with id {int}")
     public void putUpdateCartWithValidJsonWithIdId(int id) {
-        File json = new File(dummyJsonAPI.JSON_REQUEST_BODY + "/PutUpdateCart.json");
+        File json = new File(dummyJsonAPI.JSON_REG_BODY + "/PutUpdateCart.json");
         DummyJsonAPI.setPutUpdateCart(id, json);
     }
 

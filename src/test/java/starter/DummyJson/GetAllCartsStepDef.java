@@ -1,4 +1,4 @@
-package starter.Carts;
+package starter.DummyJson;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -26,10 +26,6 @@ public class GetAllCartsStepDef {
     @When("Send get all carts request")
     public void sendGetAllCartsRequest() {
         SerenityRest.when().get(dummyJsonAPI.GET_ALL_CARTS);
-    }
-
-    @Then("Status code should response {int} OK")
-    public void statusCodeShouldResponseOK(int OK) {
     }
 
     @And("Validate get all carts json schema")
