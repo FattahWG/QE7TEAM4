@@ -19,6 +19,12 @@ public class dummyJsonAPI {
     public static String DELETE_COMMENTS = URL +"/comments/{id}";
     public static String HTTP_MOCKUP = URL + "/http/{status}";
     public static String HTTP_CUSTOM = URL + "/http/404/{message}";
+    public static String GET_ALL_QUOTES = URL + "/quotes";
+    public static String GET_SINGLE_QUOTES = URL + "/quotes/{id}";
+    public static String GET_RANDOM_QUOTES = URL + "/quotes/random";
+    public static String GET_ALL_TODOS = URL + "/todos";
+    public static String GET_SINGLE_TODOS = URL + "/todos/{id}";
+    public static String POST_NEW_TODO = URL + "/todos/add";
 
 
     //GET METHOD
@@ -58,5 +64,18 @@ public class dummyJsonAPI {
     @Step("Mockup custom")
     public void MockupCustom(String http){
         SerenityRest.given().pathParam("message", http);
+    }
+
+    @Step("Get quotes id")
+    public void GetQuotesId(int id){
+        SerenityRest.given().pathParam("id", id);
+    }
+    @Step("Get todos id")
+    public void GetTodosId(int id){
+        SerenityRest.given().pathParam("id", id);
+    }
+    @Step("Get todos user id")
+    public void GetTodosUserId(int id){
+        SerenityRest.given().pathParam("id", id);
     }
 }
